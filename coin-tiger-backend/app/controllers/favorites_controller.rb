@@ -11,7 +11,14 @@ class FavoritesController < ApplicationController
     end
 
     def create 
-        favorite = Favorte.create(favorite_params)
+        # puts "+++++++++start of create method in favorites++++++++++++"
+        # binding.pry
+        favorite = Favorite.create(favorite_params)
+            if favorite.valid?
+                render json: favorite 
+            else
+                render json: { error: 'failed to create favorite'}, status: :not_accepted
+            end
     end
 
     def destroy
@@ -22,6 +29,6 @@ class FavoritesController < ApplicationController
     private 
 
     def favorite_params
-        params.require(:favorite).permit(:apiId, :name, :symbol, :user_id)
+        params.require(:favorite).permit(:symbol, :user_id)
     end
 end
