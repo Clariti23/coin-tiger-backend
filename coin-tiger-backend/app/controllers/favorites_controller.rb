@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+    skip_before_action :authorized, only: [:create, :index]
     def index 
         favorites = Favorite.all 
         render json: favorites
@@ -6,7 +7,7 @@ class FavoritesController < ApplicationController
 
     def show 
         favorite = Favorite.find(params[:id])
-        render json: note
+        render json: favorite
     end
 
     def create 
