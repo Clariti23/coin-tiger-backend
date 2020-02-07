@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_05_165000) do
+ActiveRecord::Schema.define(version: 2020_02_07_160903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,10 +24,14 @@ ActiveRecord::Schema.define(version: 2020_02_05_165000) do
     t.string "coinThree"
     t.string "coinFour"
     t.string "coinFive"
-    t.string "coinSix"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "coin_1_q"
+    t.float "coin_2_q"
+    t.float "coin_3_q"
+    t.float "coin_4_q"
+    t.float "coin_5_q"
     t.index ["user_id"], name: "index_baskets_on_user_id"
   end
 

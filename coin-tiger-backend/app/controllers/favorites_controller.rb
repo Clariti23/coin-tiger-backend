@@ -11,8 +11,6 @@ class FavoritesController < ApplicationController
     end
 
     def create 
-        # puts "+++++++++start of create method in favorites++++++++++++"
-        # binding.pry
         favorite = Favorite.create(favorite_params)
             if favorite.valid?
                 render json: favorite 
