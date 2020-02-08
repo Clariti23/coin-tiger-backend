@@ -8,8 +8,8 @@
 
 user1 = User.create(name: "Grant Ferowich", email:"gfero@gmail.com", password: "gfero" )
 
-favorite1 = Favorite.create(symbol:"btc", user: user1)
-favorite2 = Favorite.create(symbol:"eth", user: user1)
+favorite1 = Favorite.create(symbol:"btc", coin_gecko_id: "bitcoin", user: user1)
+favorite2 = Favorite.create(symbol:"eth", coin_gecko_id: "ethereum", user: user1)
 # favorite3 = Favorite.create(apiId: "kyber-network", name: "Kyber Network", symbol:"knc", user: user1)
 # favorite4 = Favorite.create(apiId: "kyber-network", name: "Kyber Network", symbol:"knc", user: user1)
 
