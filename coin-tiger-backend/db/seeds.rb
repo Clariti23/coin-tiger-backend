@@ -13,4 +13,4 @@ favorite2 = Favorite.create(symbol:"eth", coin_gecko_id: "ethereum", user: user1
 # favorite3 = Favorite.create(apiId: "kyber-network", name: "Kyber Network", symbol:"knc", user: user1)
 # favorite4 = Favorite.create(apiId: "kyber-network", name: "Kyber Network", symbol:"knc", user: user1)
 
-basket1 = Basket.create(name: "2020MAJORS", initialBasketValue: 10000, indexDate: "01-01-2020", coinOne: "btc", coin_1_q: 0.69, coinTwo: "eth", coin_2_q: 38.70, coinThree: "", coin_3_q: 0, coinFour: "", coin_4_q: 0, coinFive: "", coin_5_q: 0, user: user1)
+basket1 = Basket.create(name: "2020MAJORS", initialBasketValue: 10000, indexDate: "01-01-2020", coinOne: "btc", coin_1_q: 0.69, coinOneId: "bitcoin", coinTwo: "eth", coin_2_q: 38.70, coinTwoId: "ethereum", coinThree: "", coin_3_q: 0, coinThreeId: "", coinFour: "", coin_4_q: 0, coinFourId: "", coinFive: "", coin_5_q: 0, coinFiveId: "", user: user1)
