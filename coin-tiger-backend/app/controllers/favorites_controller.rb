@@ -1,8 +1,17 @@
 class FavoritesController < ApplicationController
-    skip_before_action :authorized, only: [:create, :index]
+    skip_before_action :authorized, only: [:create, :index, :destroy]
     def index 
         favorites = Favorite.all 
         render json: favorites
+    end
+
+    def destroy
+        puts "---------destroy method hit----------"
+        # binding.pry
+        favorite = Favorite.find(params[:id])
+        puts '---------favorite record found'
+        favorite.destroy
+        puts '----------favorite record destroyed-------'
     end
 
     def show 
@@ -19,10 +28,7 @@ class FavoritesController < ApplicationController
             end
     end
 
-    def destroy
-        favorite = Favorites.find(params[:id])
-        favorite.destroy
-    end
+    
 
     private 
 
