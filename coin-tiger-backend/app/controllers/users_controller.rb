@@ -6,6 +6,12 @@ class UsersController < ApplicationController
         render json: users
     end
 
+    def profile 
+        puts "_____user_controller: profile======="
+        puts :user
+        render json: { user: UserSerializer.new(current_user)}, status: :accepted
+    end
+
     def show 
         @user = User.find(params[:id])
         if @user 
@@ -34,6 +40,6 @@ class UsersController < ApplicationController
     private 
 
     def user_params
-        params.require(:user).permit(:name, :email, :password)
+        params.require(:user).permit(:name, :email, :password_digest)
     end  
 end
